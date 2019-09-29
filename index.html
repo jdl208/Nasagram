@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Everything space!</title>
+  <title>Nasagram</title>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
@@ -40,47 +40,58 @@
   <!-- Astronomy Photo of the Day-->
 
   <div id="apod" class="container">
-    <div class="apodtop bgblue apidata clrwhite">
-      <h1 class="clrorange">Astronomy Photo of the day</h1>
+
+    <div class="bgblue topsection clrwhite">
+      <h1><strong class="clrorange">A</strong>stronomy <strong class="clrorange">P</strong>hoto <strong class="clrorange">O</strong>f the <strong class="clrorange">D</strong>ay</h1>
       <div>
-        <input id="apodDate" oninput="getApodFromInput()" max="" type="date" name="apodDate"/>
+        <input id="apodDate" max="" type="date" value="" name="apodDate" />
       </div>
     </div>
-    <div class="apodbottom bgblue apidata clrwhite">
+
+    <div class="bgblue bottomsection clrwhite">
       <h4><span id="apodTitle"></span> <i class="far fa-question-circle" data-toggle="modal" data-target="#exampleModal"></i></h4>
       <img id="apodImg" src=""></img>
     </div>
-
-
   </div>
 
   <!-- EPIC -->
 
-  <div id="epic" class="container bgorange apidata clrblue">
-    <h1 class="clrorange">Astronomy Photo of the day</h1>
-    <div><i class="fas fa-chevron-left"></i><span id=""> DD-MM-YYYY </span><i class="fas fa-chevron-right"></i></div>
-    <div>
-      <h4><span id=""></span> <i class="far fa-question-circle" data-toggle="modal" data-target="#exampleModal"></i></h4>
+  <div id="epic" class="container">
+    <div class="container bgblue topsection clrwhite">
+      <h1><strong class="clrorange">E</strong>arth <strong class="clrorange">P</strong>olychromatic <strong class="clrorange">I</strong>maging <strong class="clrorange">C</strong>amera</h1>
+      <div>
+        <input id="epicDate" max="" type="date" name="epicDate" />
+      </div>
+      <i id="epicExplanation" class="far fa-question-circle" data-toggle="modal" data-target="#epicModal"></i>
     </div>
-    <img id="" src=""></img>
+
+    <div class="bgblue bottomsection clrwhite">
+      <h4></h4>
+      <img id="epicImg" src=""></img>
+
+    </div>
 
   </div>
 
 
   <!-- Mars Rover Pictures -->
 
-  <div id="mars" class="container apidata">
-    <h1 class="clrorange">Astronomy Photo of the day</h1>
-    <div><i class="fas fa-chevron-left"></i><span id="apodDate"> DD-MM-YYYY </span><i class="fas fa-chevron-right"></i></div>
-    <div>
-      <h4><span id="apodTitle"></span> <i class="far fa-question-circle" data-toggle="modal" data-target="#exampleModal"></i></h4>
+  <div id="mars" class="container">
+    
+    <div class="bgblue clrwhite topsection">
+      <h1 class="clrorange">Mars Rovers</h1>
+      <div><i class="fas fa-chevron-left"></i><span id=""> DD-MM-YYYY </span><i class="fas fa-chevron-right"></i></div>
     </div>
-    <img id="apodImg" src=""></img>
+
+    <div class="bgblue clrwhite bottomsection">
+      <h4><span id=""></span> <i class="far fa-question-circle" data-toggle="modal" data-target="#exampleModal"></i></h4>
+      <img id="" src=""></img>
+    </div>
 
   </div>
 
 
-  <!-- Modal -->
+  <!-- Modal Apod -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content modalbg">
@@ -91,6 +102,23 @@
         </button>
         </div>
         <div class="modal-body clrwhite" id="apodExplanation">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Epic -->
+  <div class="modal fade" id="epicModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content modalbg">
+        <div class="modal-header clrorange">
+          <h5 class="modal-title" id="exampleModalLabel">EPIC</h5>
+          <button type="button" class="close clrwhite" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body clrwhite">EPIC contains the daily imagery collected by DSCOVR's Earth Polychromatic Imaging Camera (EPIC) instrument. Uniquely positioned at the Earth-Sun Lagrange point, EPIC provides full disc imagery of the Earth and captures unique perspectives of certain
+          astronomical events such as lunar transits using a 2048x2048 pixel CCD (Charge Coupled Device) detector coupled to a 30-cm aperture Cassegrain telescope.
         </div>
       </div>
     </div>
