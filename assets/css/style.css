@@ -48,6 +48,10 @@ body {
 
 /* ASTRONOMY PHOTO OF THE DAY*/
 
+#apod {
+    display: none;
+}
+
 #apodImg {
     width: 100%;
 }
@@ -60,7 +64,7 @@ body {
 
 #epic {
     position: relative;
-    display: none;
+    /*display: none;*/
 }
 
 #epicImg {

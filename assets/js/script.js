@@ -58,7 +58,7 @@ $(document).ready(function() {
 
     });
 
-    $("#apodDate").change(function(){
+    $("#apodDate").change(function() {
         getApod(function(data) {
             document.getElementById("apodDate").innerHTML = data.date;
             document.getElementById("apodTitle").innerHTML = data.title;
@@ -70,4 +70,64 @@ $(document).ready(function() {
 
     // EPIC - Earth Polychromatic Imaging Camera
 
+    function getLastEpic(cb) {
+        var xhr = new XMLHttpRequest();
+
+        xhr.open("GET", "https://api.nasa.gov/EPIC/api/enhanced/images?api_key=wUAJ4mhB3TmjgWUsGryQlRMw59v3Wzbg3xXc8AlR");
+        xhr.send();
+
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                cb(JSON.parse(this.responseText));
+            }
+        };
+    }
+
+    function getEpicInputDate(cb) {
+        var xhr = new XMLHttpRequest();
+
+        var epicDate = $("#epicDate").val();
+
+        xhr.open("GET", "https://api.nasa.gov/EPIC/api/enhanced/date/" + epicDate + "?api_key=wUAJ4mhB3TmjgWUsGryQlRMw59v3Wzbg3xXc8AlR");
+        xhr.send();
+
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                cb(JSON.parse(this.responseText));
+            }
+        };
+    }
+
+    getLastEpic(function(epicData) {
+        var lastDate = epicData[0].date.split(" ");
+        var lastAvailableDate = lastDate[0];
+        document.getElementById("epicDate").setAttribute("value", lastAvailableDate);
+        document.getElementById("epicDate").setAttribute("max", lastAvailableDate);
+        document.getElementById("modalEpicDate").innerHTML = lastAvailableDate;
+        try {
+            document.getElementById("epicImg").src = "https://api.nasa.gov/EPIC/archive/enhanced/" + lastAvailableDate.replace(/-/g, "/") + "/png/" + epicData[0].image + ".png?api_key=wUAJ4mhB3TmjgWUsGryQlRMw59v3Wzbg3xXc8AlR";
+        }
+        catch (err) {
+            console.log(err);
+            document.getElementById("epicImg").src = "assets/images/no_Image.png";
+        }
+    });
+
+    $("#epicDate").change(function() {
+        getEpicInputDate(function(epicInputData) {
+            var epicDate = $("#epicDate").val().replace(/-/g, "/");
+            try {
+                document.getElementById("epicImg").src = "https://api.nasa.gov/EPIC/archive/enhanced/" + epicDate + "/png/" + epicInputData[0].image + ".png?api_key=wUAJ4mhB3TmjgWUsGryQlRMw59v3Wzbg3xXc8AlR";
+            }
+            catch (err) {
+                console.log(err);
+                document.getElementById("epicImg").src = "assets/images/no_Image.png";
+
+            }
+        });
+        // }
+        // catch(err) {
+        //     document.getElementById("epicImg").src = "assets/images/no_Image.png";
+        // }
+    });
 });
