@@ -2,23 +2,23 @@ $(document).ready(function() {
     // NAV Buttons to slide in and out the requested section
 
     $("#apodNav").click(function() {
-        $("#epic").slideUp("slow", function() {
-            $("#mars").slideUp("slow", function() {
-                $("#apod").slideDown("slow")
+        $("#epic").fadeOut("slow", function() {
+            $("#mars").fadeOut("slow", function() {
+                $("#apod").fadeIn("slow")
             });
         });
     });
     $("#epicNav").click(function() {
-        $("#apod").slideUp("slow", function() {
-            $("#mars").slideUp("slow", function() {
-                $("#epic").slideDown("slow")
+        $("#apod").fadeOut("slow", function() {
+            $("#mars").fadeOut("slow", function() {
+                $("#epic").fadeIn("slow")
             });
         });
     });
     $("#marsNav").click(function() {
-        $("#apod").slideUp("fast", function() {
-            $("#epic").slideUp("fast", function() {
-                $("#mars").slideDown("slow")
+        $("#apod").fadeOut("fast", function() {
+            $("#epic").fadeOut("fast", function() {
+                $("#mars").fadeIn("slow")
             });
         });
     });
@@ -113,6 +113,8 @@ $(document).ready(function() {
         }
     });
 
+
+
     $("#epicDate").change(function() {
         getEpicInputDate(function(epicInputData) {
             var epicDate = $("#epicDate").val().replace(/-/g, "/");
@@ -130,4 +132,61 @@ $(document).ready(function() {
         //     document.getElementById("epicImg").src = "assets/images/no_Image.png";
         // }
     });
+
+    // MARS ROVERS
+    function getMarsImg(cb) {
+        var xhr = new XMLHttpRequest();
+
+        var rover = $("#marsRover").val();
+        var sol = $("#sol").val();
+        console.log(rover);
+        console.log(sol);
+
+        xhr.open("GET", "https://api.nasa.gov/mars-photos/api/v1/rovers/" + rover + "/photos?sol=" + sol + "&api_key=wUAJ4mhB3TmjgWUsGryQlRMw59v3Wzbg3xXc8AlR");
+        xhr.send();
+
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                cb(JSON.parse(this.responseText));
+            }
+        };
+    }
+
+    function getRover(cb) {
+        var xhr = new XMLHttpRequest();
+
+        var rover = $("#marsRover").val();
+
+        xhr.open("GET", "https://api.nasa.gov/mars-photos/api/v1/manifests/" + rover + "?api_key=wUAJ4mhB3TmjgWUsGryQlRMw59v3Wzbg3xXc8AlR");
+        xhr.send();
+
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                cb(JSON.parse(this.responseText));
+            }
+        };
+    }
+
+    getRover(function(roverData) {
+        // console.dir(roverData.photo_manifest);
+        document.getElementById("sol").setAttribute("value", roverData.photo_manifest.max_sol);
+        document.getElementById("sol").setAttribute("max", roverData.photo_manifest.max_sol);
+        getMarsImg(function(marsData) {
+            console.dir(marsData);
+            document.getElementById("marsImg").src = marsData.photos[0].img_src;
+        });
+    });
+
+    $(".marsRover").change(function() {
+        getRover(function(roverData) {
+            console.dir(roverData.photo_manifest);
+            document.getElementById("sol").setAttribute("value", roverData.photo_manifest.max_sol);
+            document.getElementById("sol").setAttribute("max", roverData.photo_manifest.max_sol);
+            getMarsImg(function(marsData) {
+                console.dir(marsData);
+                document.getElementById("marsImg").src = marsData.photos[0].img_src;
+            });
+        });
+    });
+
 });

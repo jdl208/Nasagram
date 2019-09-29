@@ -9,12 +9,22 @@ body {
 
 .topsection,
 .bottomsection {
-    margin-top: 30px;
-    border-radius: 20px;
     padding: 25px;
     text-align: center;
-
 }
+
+.topsection {
+    margin-top: 30px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom: #FC3D21 solid 2px;
+}
+
+.bottomsection {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
 
 /* NAVBAR*/
 
@@ -54,6 +64,7 @@ body {
 
 #apodImg {
     width: 100%;
+    border-radius: 20px;
 }
 
 .modalbg {
@@ -64,11 +75,12 @@ body {
 
 #epic {
     position: relative;
-    /*display: none;*/
+    display: none;
 }
 
 #epicImg {
     max-width: 100%;
+    border-radius: 20px;
 }
 
 #epicExplanation {
@@ -81,5 +93,10 @@ body {
 /* MARS ROVERS*/
 
 #mars {
-    display: none;
+    /*display: none;*/
+}
+
+#marsImg {
+    width: 100%;
+    border-radius: 20px;
 }
