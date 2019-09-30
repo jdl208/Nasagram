@@ -2,23 +2,32 @@ $(document).ready(function() {
     // NAV Buttons to slide in and out the requested section
 
     $("#apodNav").click(function() {
+        $("#apodNav").addClass("active");
+        $("#epicNav").removeClass("active");
         $("#epic").fadeOut("slow", function() {
+            $("#marsNav").removeClass("active");
             $("#mars").fadeOut("slow", function() {
-                $("#apod").fadeIn("slow")
+                $("#apod").fadeIn("slow");
             });
         });
     });
     $("#epicNav").click(function() {
+        $("#epicNav").addClass("active");
+        $("#apodNav").removeClass("active");
         $("#apod").fadeOut("slow", function() {
+            $("#marsNav").removeClass("active");
             $("#mars").fadeOut("slow", function() {
-                $("#epic").fadeIn("slow")
+                $("#epic").fadeIn("slow");
             });
         });
     });
     $("#marsNav").click(function() {
+        $("#marsNav").addClass("active");
+        $("#apodNav").removeClass("active");
         $("#apod").fadeOut("fast", function() {
+            $("#epicNav").removeClass("active");
             $("#epic").fadeOut("fast", function() {
-                $("#mars").fadeIn("slow")
+                $("#mars").fadeIn("slow");
             });
         });
     });

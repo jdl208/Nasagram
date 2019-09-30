@@ -37,67 +37,69 @@
   </nav>
 
   <!-- Astronomy Photo of the Day-->
+
   <div id="apod" class="container">
-
-    <div class="bgblue topsection clrwhite">
-      <h1><strong class="clrorange">A</strong>stronomy <strong class="clrorange">P</strong>hoto <strong class="clrorange">O</strong>f the <strong class="clrorange">D</strong>ay</h1>
-      <div>
-        <input id="apodDate" class="inputfield" max="" type="date" value="" name="apodDate" />
+    <div class="main">
+      <div class="bgblue topsection clrwhite">
+        <h1><strong class="clrorange">A</strong>stronomy <strong class="clrorange">P</strong>hoto <strong class="clrorange">O</strong>f the <strong class="clrorange">D</strong>ay</h1>
+        <div>
+          <input id="apodDate" class="inputfield" max="" type="date" value="" name="apodDate" />
+        </div>
       </div>
-    </div>
 
-    <div class="bgblue bottomsection clrwhite">
-      <h4><span id="apodTitle"></span> <i class="far fa-question-circle" data-toggle="modal" data-target="#exampleModal"></i></h4>
-      <img id="apodImg" src=""></img>
+      <div class="bgblue bottomsection clrwhite">
+        <h4><span id="apodTitle"></span> <i class="far fa-question-circle info" data-toggle="modal" data-target="#exampleModal"></i></h4>
+        <img id="apodImg" src=""></img>
+      </div>
     </div>
   </div>
 
   <!-- EPIC -->
 
   <div id="epic" class="container">
-    <div class="container bgblue topsection clrwhite">
-      <h1><strong class="clrorange">E</strong>arth <strong class="clrorange">P</strong>olychromatic <strong class="clrorange">I</strong>maging <strong class="clrorange">C</strong>amera</h1>
-      <div>
-        <input id="epicDate" class="inputfield" max="" type="date" name="epicDate" />
+    <div class="main">
+      <div class="container bgblue topsection clrwhite">
+        <h1><strong class="clrorange">E</strong>arth <strong class="clrorange">P</strong>olychromatic <strong class="clrorange">I</strong>maging <strong class="clrorange">C</strong>amera</h1>
+        <div>
+          <input id="epicDate" class="inputfield" max="" type="date" name="epicDate" />
+        </div>
+        <i id="epicExplanation" class="far fa-question-circle" data-toggle="modal" data-target="#epicModal"></i>
       </div>
-      <i id="epicExplanation" class="far fa-question-circle" data-toggle="modal" data-target="#epicModal"></i>
+
+      <div class="bgblue bottomsection clrwhite">
+        <h4></h4>
+        <img id="epicImg" src=""></img>
+
+      </div>
     </div>
-
-    <div class="bgblue bottomsection clrwhite">
-      <h4></h4>
-      <img id="epicImg" src=""></img>
-
-    </div>
-
   </div>
 
 
   <!-- Mars Rover Pictures -->
 
-  <div id="mars" class="container">
-
-    <div class="bgblue clrwhite topsection">
-      <h1><strong class="clrorange">M</strong>ars <strong class="clrorange">R</strong>over <strong class="clrorange">I</strong>mages</h1>
-      <div><i id="marsInfo" class="far fa-question-circle" data-toggle="modal" data-target="#marsModal"></i></div>
-      <form>
-            <label for="marsRover">Rover: </label>
-            <select id="marsRover" class="marsRover  inputfield" size=1>
+  <div id="mars" class="container ">
+    <div class="main">
+      <div class="bgblue clrwhite topsection">
+        <h1><strong class="clrorange">M</strong>ars <strong class="clrorange">R</strong>over <strong class="clrorange">I</strong>mages</h1>
+        <div><i id="marsInfo" class="far fa-question-circle" data-toggle="modal" data-target="#marsModal"></i></div>
+        <form>
+          <label for="marsRover">Rover: </label>
+          <select id="marsRover" class="marsRover  inputfield" size=1>
                   <option>Curiosity</option>
                   <option>Opportunity</option>
                   <option>Spirit</option>
                 </select>
 
-            <label for="sol">Sol:</label>
-            <input id="sol" class="marsRover inputfield" type="number" name="sol" max="" value="">
-      </form>
-    </div>
+          <label for="sol">Sol:</label>
+          <input id="sol" class="marsRover inputfield" type="number" name="sol" max="" value="">
+        </form>
+      </div>
 
-    <div class="bgblue clrwhite bottomsection">
-      <img id="marsImg" src=""></img>
+      <div class="bgblue clrwhite bottomsection">
+        <img id="marsImg" src=""></img>
+      </div>
     </div>
-
   </div>
-
 
   <!-- Modal Apod -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -132,7 +134,7 @@
       </div>
     </div>
   </div>
-  
+
   <!-- Modal Mars -->
   <div class="modal fade" id="marsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -143,10 +145,9 @@
           <span aria-hidden="true">&times;</span>
         </button>
         </div>
-        <div class="modal-body clrwhite">Sol is a Martian Solar Day. The count for the rover starts from the day it landed on Mars.<br><br>
-        Rover info:<br><br>
-        
-        
+        <div class="modal-body clrwhite">Sol is a Martian Solar Day. The count for the rover starts from the day it landed on Mars.<br><br> Rover info:<br><br>
+
+
 
         </div>
       </div>
