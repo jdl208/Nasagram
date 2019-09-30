@@ -3,7 +3,7 @@
 html,
 body {
     font-family: 'Source Sans Pro', serif;
-    background-color: lightgrey;
+    background-color: black;
 }
 
 
@@ -14,7 +14,7 @@ body {
 }
 
 .topsection {
-    margin-top: 30px;
+    margin-top: 25px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom: #FC3D21 solid 2px;
@@ -25,13 +25,10 @@ body {
     border-bottom-right-radius: 20px;
 }
 
-
-/* NAVBAR*/
-
-.navbar,
-.navbar-brand {
-    padding-top: 0px;
-    padding-bottom: 0px;
+.inputfield {
+    width:150px;
+    height: 25px;
+    border-radius: 4px;
 }
 
 /* Standard Colors*/
@@ -56,10 +53,22 @@ body {
     color: white;
 }
 
+/* NAVBAR*/
+
+.navbar,
+.navbar-brand {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.navbutton:hover {
+        color: #FC3D21;
+}
+
 /* ASTRONOMY PHOTO OF THE DAY*/
 
 #apod {
-    display: none;
+    /*display: none;*/
 }
 
 #apodImg {
@@ -83,7 +92,8 @@ body {
     border-radius: 20px;
 }
 
-#epicExplanation {
+#epicExplanation,
+#marsInfo {
     position: absolute;
     right: 25px;
     top: 10px;
@@ -93,10 +103,12 @@ body {
 /* MARS ROVERS*/
 
 #mars {
-    /*display: none;*/
+    display: none;
+    position: relative;
 }
 
 #marsImg {
     width: 100%;
     border-radius: 20px;
 }
+

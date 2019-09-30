@@ -28,9 +28,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a id="apodNav" class="nav-item nav-link clrwhite active" href="#" data-toggle="collapse" data-target="#navbarNavAltMarkup"><i class="fas fa-camera-retro"></i> APOD <span class="sr-only">(current)</span></a>
-          <a id="epicNav" class="nav-item nav-link clrwhite" href="#" data-toggle="collapse" data-target="#navbarNavAltMarkup"><i class="fas fa-globe-americas"></i> EPIC</a>
-          <a id="marsNav" class="nav-item nav-link clrwhite" href="#" data-toggle="collapse" data-target="#navbarNavAltMarkup"><i class="fas fa-user-astronaut"></i> MARS</a>
+          <a id="apodNav" class="nav-item nav-link clrwhite navbutton active" href="#" data-toggle="collapse" data-target="#navbarNavAltMarkup"><i class="fas fa-camera-retro"></i> APOD <span class="sr-only">(current)</span></a>
+          <a id="epicNav" class="nav-item nav-link clrwhite navbutton" href="#" data-toggle="collapse" data-target="#navbarNavAltMarkup"><i class="fas fa-globe-americas"></i> EPIC</a>
+          <a id="marsNav" class="nav-item nav-link clrwhite navbutton" href="#" data-toggle="collapse" data-target="#navbarNavAltMarkup"><i class="fas fa-user-astronaut"></i> MARS</a>
         </div>
       </div>
     </div>
@@ -42,7 +42,7 @@
     <div class="bgblue topsection clrwhite">
       <h1><strong class="clrorange">A</strong>stronomy <strong class="clrorange">P</strong>hoto <strong class="clrorange">O</strong>f the <strong class="clrorange">D</strong>ay</h1>
       <div>
-        <input id="apodDate" max="" type="date" value="" name="apodDate" />
+        <input id="apodDate" class="inputfield" max="" type="date" value="" name="apodDate" />
       </div>
     </div>
 
@@ -58,7 +58,7 @@
     <div class="container bgblue topsection clrwhite">
       <h1><strong class="clrorange">E</strong>arth <strong class="clrorange">P</strong>olychromatic <strong class="clrorange">I</strong>maging <strong class="clrorange">C</strong>amera</h1>
       <div>
-        <input id="epicDate" max="" type="date" name="epicDate" />
+        <input id="epicDate" class="inputfield" max="" type="date" name="epicDate" />
       </div>
       <i id="epicExplanation" class="far fa-question-circle" data-toggle="modal" data-target="#epicModal"></i>
     </div>
@@ -78,16 +78,17 @@
 
     <div class="bgblue clrwhite topsection">
       <h1><strong class="clrorange">M</strong>ars <strong class="clrorange">R</strong>over <strong class="clrorange">I</strong>mages</h1>
+      <div><i id="marsInfo" class="far fa-question-circle" data-toggle="modal" data-target="#marsModal"></i></div>
       <form>
             <label for="marsRover">Rover: </label>
-            <select id="marsRover" class="marsRover" size=1>
+            <select id="marsRover" class="marsRover  inputfield" size=1>
                   <option>Curiosity</option>
                   <option>Opportunity</option>
                   <option>Spirit</option>
                 </select>
 
             <label for="sol">Sol:</label>
-            <input id="sol" class="marsRover" type="number" name="sol" max="" value="">
+            <input id="sol" class="marsRover inputfield" type="number" name="sol" max="" value="">
       </form>
     </div>
 
@@ -126,6 +127,26 @@
         </div>
         <div class="modal-body clrwhite">EPIC contains the daily imagery collected by DSCOVR's Earth Polychromatic Imaging Camera (EPIC) instrument. Uniquely positioned at the Earth-Sun Lagrange point, EPIC provides full disc imagery of the Earth and captures unique perspectives of certain
           astronomical events such as lunar transits using a 2048x2048 pixel CCD (Charge Coupled Device) detector coupled to a 30-cm aperture Cassegrain telescope.<br><br> The last available image is dated: <span id="modalEpicDate" type="date"></span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal Mars -->
+  <div class="modal fade" id="marsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content modalbg">
+        <div class="modal-header clrorange">
+          <h5 class="modal-title" id="exampleModalLabel">About the Mars Rovers</h5>
+          <button type="button" class="close clrwhite" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body clrwhite">Sol is a Martian Solar Day. The count for the rover starts from the day it landed on Mars.<br><br>
+        Rover info:<br><br>
+        
+        
 
         </div>
       </div>
