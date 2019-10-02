@@ -136,10 +136,6 @@ $(document).ready(function() {
 
             }
         });
-        // }
-        // catch(err) {
-        //     document.getElementById("epicImg").src = "assets/images/no_Image.png";
-        // }
     });
 
     // MARS ROVERS
@@ -148,8 +144,6 @@ $(document).ready(function() {
 
         var rover = $("#marsRover").val();
         var sol = $("#sol").val();
-        console.log(rover);
-        console.log(sol);
 
         xhr.open("GET", "https://api.nasa.gov/mars-photos/api/v1/rovers/" + rover + "/photos?sol=" + sol + "&api_key=wUAJ4mhB3TmjgWUsGryQlRMw59v3Wzbg3xXc8AlR");
         xhr.send();
@@ -177,25 +171,39 @@ $(document).ready(function() {
     }
 
     getRover(function(roverData) {
-        // console.dir(roverData.photo_manifest);
-        document.getElementById("sol").setAttribute("value", roverData.photo_manifest.max_sol);
+        console.dir(roverData.photo_manifest);
+        $("#sol").val(roverData.photo_manifest.max_sol);
         document.getElementById("sol").setAttribute("max", roverData.photo_manifest.max_sol);
         getMarsImg(function(marsData) {
-            console.dir(marsData);
             document.getElementById("marsImg").src = marsData.photos[0].img_src;
         });
     });
 
-    $(".marsRover").change(function() {
+    $("#marsRover").change(function() {
         getRover(function(roverData) {
-            console.dir(roverData.photo_manifest);
-            document.getElementById("sol").setAttribute("value", roverData.photo_manifest.max_sol);
+            $("#sol").val(roverData.photo_manifest.max_sol);
             document.getElementById("sol").setAttribute("max", roverData.photo_manifest.max_sol);
             getMarsImg(function(marsData) {
-                console.dir(marsData);
                 document.getElementById("marsImg").src = marsData.photos[0].img_src;
             });
         });
     });
+    $("#sol").change(function() {
+        getRover(function(roverData) {
+            getMarsImg(function(marsData) {
+                                console.dir(marsData);
+
+                document.getElementById("marsImg").src = marsData.photos[0].img_src;
+            });
+        });
+    });
+    $("#cameras").change(function() {
+        getRover(function(roverData) {
+            getMarsImg(function(marsData) {
+                document.getElementById("marsImg").src = marsData.photos[0].img_src;
+            });
+        });
+    });
+
 
 });

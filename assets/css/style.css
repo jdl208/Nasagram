@@ -130,3 +130,7 @@ body {
     width: 100%;
     border-radius: 20px;
 }
+
+label {
+    width: 50px;
+}

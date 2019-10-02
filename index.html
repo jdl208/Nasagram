@@ -81,18 +81,26 @@
     <div class="main">
       <div class="bgblue clrwhite topsection">
         <h1><strong class="clrorange">M</strong>ars <strong class="clrorange">R</strong>over <strong class="clrorange">I</strong>mages</h1>
-        <div><i id="marsInfo" class="far fa-question-circle" data-toggle="modal" data-target="#marsModal"></i></div>
-        <form>
-          <label for="marsRover">Rover: </label>
-          <select id="marsRover" class="marsRover  inputfield" size=1>
-                  <option>Curiosity</option>
-                  <option>Opportunity</option>
-                  <option>Spirit</option>
-                </select>
 
-          <label for="sol">Sol:</label>
-          <input id="sol" class="marsRover inputfield" type="number" name="sol" max="" value="">
-        </form>
+        <div><i id="marsInfo" class="far fa-question-circle" data-toggle="modal" data-target="#marsModal"></i></div>
+        <div class="row">
+          <div class="col-12">
+            <label for="marsRover">Rover: </label>
+            <select id="marsRover" class="marsRover  inputfield" size=1>
+              <option>Curiosity</option>
+              <option>Opportunity</option>
+              <option>Spirit</option>
+            </select>
+            <span id="status"></span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <label for="sol">Sol:</label>
+          <input id="sol" class="marsRover inputfield" type="number" name="sol" max="1" value="1" required>
+          </div>
+        </div>
       </div>
 
       <div class="bgblue clrwhite bottomsection">
