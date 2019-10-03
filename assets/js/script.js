@@ -59,21 +59,45 @@ $(document).ready(function() {
     }
 
     getApod(function(data) {
-        document.getElementById("apodDate").innerHTML = data.date;
-        document.getElementById("apodTitle").innerHTML = data.title;
-        document.getElementById("apodImg").src = data.url;
-        document.getElementById("apodExplanation").innerHTML = data.explanation;
-        document.getElementById("exampleModalLabel").innerHTML = data.title;
-
+        $("#apodDate").html(data.date);
+        $("#apodTitle").html(data.title);
+        $("#apodExplanation").html(data.explanation);
+        $("#exampleModalLabel").html(data.title);
+        $("#apodImg").attr("alt", data.title);
+        if (data.media_type == "image") {
+                $("#apodImg").removeClass("d-none");
+                $("#apodMov").addClass("d-none");
+                $("#apodImg").attr("src", data.url);
+                $("#apodImg").attr("alt", data.title);
+            }
+            else {
+                $("#apodImg").addClass("d-none");
+                $("#apodMov").removeClass("d-none");
+                $("#apodMov").attr("src", data.url);
+                $("#apodMov").attr("alt", data.title);
+            }
     });
 
     $("#apodDate").change(function() {
         getApod(function(data) {
-            document.getElementById("apodDate").innerHTML = data.date;
-            document.getElementById("apodTitle").innerHTML = data.title;
-            document.getElementById("apodImg").src = data.url;
-            document.getElementById("apodExplanation").innerHTML = data.explanation;
-            document.getElementById("exampleModalLabel").innerHTML = data.title;
+            console.dir(data);
+            $("#apodDate").html(data.date);
+            $("#apodTitle").html(data.title);
+            $("#apodExplanation").html(data.explanation);
+            $("#exampleModalLabel").html(data.title);
+            if (data.media_type == "image") {
+                $("#apodImg").removeClass("d-none");
+                $("#apodMov").addClass("d-none");
+                $("#apodImg").attr("src", data.url);
+                $("#apodImg").attr("alt", data.title);
+            }
+            else {
+                $("#apodImg").addClass("d-none");
+                $("#apodMov").removeClass("d-none");
+                $("#apodMov").attr("src", data.url);
+                $("#apodMov").attr("alt", data.title);
+            }
+
         });
     });
 
@@ -171,19 +195,38 @@ $(document).ready(function() {
     }
 
     getRover(function(roverData) {
-        console.dir(roverData.photo_manifest);
         $("#sol").val(roverData.photo_manifest.max_sol);
+        $("#statusRover").html(roverData.photo_manifest.status);
+        if (roverData.photo_manifest.status == "active") {
+            $("#statusRover").removeClass("status-inactive");
+            $("#statusRover").addClass("status-active");
+        }
+        else {
+            $("#statusRover").addClass("status-inactive");
+            $("#statusRover").removeClass("status-active");
+        }
         document.getElementById("sol").setAttribute("max", roverData.photo_manifest.max_sol);
         getMarsImg(function(marsData) {
-            document.getElementById("marsImg").src = marsData.photos[0].img_src;
+            $("#earthDate").html(marsData.photos[0].earth_date);
+            $("#marsImg").attr("src", marsData.photos[0].img_src);
         });
     });
 
     $("#marsRover").change(function() {
         getRover(function(roverData) {
             $("#sol").val(roverData.photo_manifest.max_sol);
+            $("#statusRover").html(roverData.photo_manifest.status);
             document.getElementById("sol").setAttribute("max", roverData.photo_manifest.max_sol);
+            if (roverData.photo_manifest.status == "active") {
+                $("#statusRover").removeClass("status-inactive");
+                $("#statusRover").addClass("status-active");
+            }
+            else {
+                $("#statusRover").addClass("status-inactive");
+                $("#statusRover").removeClass("status-active");
+            }
             getMarsImg(function(marsData) {
+                $("#earthDate").html(marsData.photos[0].earth_date);
                 document.getElementById("marsImg").src = marsData.photos[0].img_src;
             });
         });
@@ -191,15 +234,8 @@ $(document).ready(function() {
     $("#sol").change(function() {
         getRover(function(roverData) {
             getMarsImg(function(marsData) {
-                                console.dir(marsData);
-
-                document.getElementById("marsImg").src = marsData.photos[0].img_src;
-            });
-        });
-    });
-    $("#cameras").change(function() {
-        getRover(function(roverData) {
-            getMarsImg(function(marsData) {
+                console.dir(marsData);
+                $("#earthDate").html(marsData.photos[0].earth_date);
                 document.getElementById("marsImg").src = marsData.photos[0].img_src;
             });
         });

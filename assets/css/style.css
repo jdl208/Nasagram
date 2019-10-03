@@ -95,6 +95,10 @@ body {
     color: #FC3D21;
 }
 
+iframe {
+    max-width: 95%;
+}
+
 /* EPIC */
 
 #epic {
@@ -121,6 +125,13 @@ body {
 }
 /* MARS ROVERS*/
 
+.inline-block {
+    display: inline-block;
+    width: 150px;
+    height: 25px;
+    text-align: left;
+}
+
 #mars {
     display: none;
     position: relative;
@@ -131,6 +142,25 @@ body {
     border-radius: 20px;
 }
 
-label {
-    width: 50px;
+.marslabel {
+    width: 110px;
+    height: 25px;
+    text-align: right;
+    margin-right: 5px;
+}
+
+.status-active {
+    color: lightgreen;
+}
+
+.status-inactive {
+    color: red;
+}
+
+/* Footer */
+
+footer {
+    margin-top: 25px;
+    text-align: center;
+    min-height:30px;
 }

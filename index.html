@@ -20,9 +20,9 @@
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-sm bgblue">
     <div class="container">
-      <a class="navbar-brand" href="#">
+      <div class="navbar-brand">
         <img id="nasalogo" src="assets/images/NASA_logo.svg">
-      </a>
+      </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars clrwhite"></i>
       </button>
@@ -49,7 +49,8 @@
 
       <div class="bgblue bottomsection clrwhite">
         <h4><span id="apodTitle"></span> <i class="far fa-question-circle info" data-toggle="modal" data-target="#exampleModal"></i></h4>
-        <img id="apodImg" src=""></img>
+        <img class="" id="apodImg" src=""></img>
+        <iframe id="apodMov" class="d-none" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </div>
@@ -82,24 +83,37 @@
       <div class="bgblue clrwhite topsection">
         <h1><strong class="clrorange">M</strong>ars <strong class="clrorange">R</strong>over <strong class="clrorange">I</strong>mages</h1>
 
+        <!-- Mars Modal selector -->
         <div><i id="marsInfo" class="far fa-question-circle" data-toggle="modal" data-target="#marsModal"></i></div>
+
+
         <div class="row">
-          <div class="col-12">
-            <label for="marsRover">Rover: </label>
-            <select id="marsRover" class="marsRover  inputfield" size=1>
+          <div class="col-sm-6">
+            <label class="marslabel" for="marsRover">Rover: </label>
+            <select id="marsRover" class="marsRover inputfield" size=1>
               <option>Curiosity</option>
               <option>Opportunity</option>
               <option>Spirit</option>
             </select>
             <span id="status"></span>
           </div>
+          <div class="col-sm-6">
+            <div class="marslabel inline-block">Status mission: </div>
+            <div class="inline-block"><strong id="statusRover"></strong></div>
+          </div>
+
         </div>
 
         <div class="row">
-          <div class="col-12">
-            <label for="sol">Sol:</label>
-          <input id="sol" class="marsRover inputfield" type="number" name="sol" max="1" value="1" required>
+          <div class="col-sm-6">
+            <label class="marslabel" for="sol">Sol:</label>
+            <input id="sol" class="marsRover inputfield" type="number" name="sol" max="" value="" required>
           </div>
+          <div class="col-sm-6">
+            <div class="marslabel inline-block">Earth date: </div>
+            <div id="earthDate" class="inline-block"> DD-MM-YYYY</div>
+          </div>
+
         </div>
       </div>
 
@@ -108,6 +122,12 @@
       </div>
     </div>
   </div>
+  
+  <!-- FOOTER -->
+  
+  <footer class="bgblue clrwhite">
+    Copyright: onLion Software. For educational purposes only.
+  </footer>
 
   <!-- Modal Apod -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
