@@ -82,13 +82,20 @@ body {
     padding-top: 0px;
     padding-bottom: 0px;
 }
+.navbutton {
+    margin-left: 10px;
+    padding-left: 20px!important;
+    padding-right: 20px!important;
 
+}
 .navbutton:hover {
     color: #FC3D21;
 }
 
 .active {
     color: #FC3D21;
+    background-color: white;
+    border-radius: 20px;
 }
 
 /* ASTRONOMY PHOTO OF THE DAY*/
