@@ -3,8 +3,14 @@ This website has a connection with tha api from NASA. It's a small, easy digesta
 * An astronomy photo of the day.
 * A picture of earth.
 * Pictures taken by the Mars Rovers.
+
+The website can be viewed [here](https://jdl208.github.io/Nasagram/)
 ## UX
 I wanted to make a website with minimal scrolling. So it focusses immediatly on the pictures. When you go to another section, The latest picture made by that camera will immediatly be there.
+
+The users should be able to consume the information with as little clicking as possible.
+
+[The initial design](https://github.com/jdl208/Nasagram/blob/54d11868d6ee4714ca3729ed3d484cee7d3d3859/wireframes/Nasagram%20Initial%20design.png) was a bit different from the end result. I figured it looked better when i made the center of the page one unit instead of 2.
 ## Features
 ### Existing features
 - Image select - At first the most recent picture is shown. But you can select previous dates to have a view of that image.
