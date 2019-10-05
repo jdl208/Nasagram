@@ -7,7 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Nasagram</title>
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
   <!--Font Awesome-->
@@ -23,14 +24,19 @@
       <div class="navbar-brand">
         <img id="nasalogo" src="assets/images/NASA_logo.svg">
       </div>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars clrwhite"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a id="apodNav" class="nav-item nav-link clrwhite navbutton active" href="#" data-toggle="collapse" data-target="#navbarNavAltMarkup"><i class="fas fa-camera-retro"></i> APOD <span class="sr-only">(current)</span></a>
-          <a id="epicNav" class="nav-item nav-link clrwhite navbutton" href="#" data-toggle="collapse" data-target="#navbarNavAltMarkup"><i class="fas fa-globe-americas"></i> EPIC</a>
-          <a id="marsNav" class="nav-item nav-link clrwhite navbutton" href="#" data-toggle="collapse" data-target="#navbarNavAltMarkup"><i class="fas fa-user-astronaut"></i> MARS</a>
+          <a id="apodNav" class="nav-item nav-link clrwhite navbutton active" href="#" data-toggle="collapse"
+            data-target="#navbarNavAltMarkup"><i class="fas fa-camera-retro"></i> APOD <span
+              class="sr-only">(current)</span></a>
+          <a id="epicNav" class="nav-item nav-link clrwhite navbutton" href="#" data-toggle="collapse"
+            data-target="#navbarNavAltMarkup"><i class="fas fa-globe-americas"></i> EPIC</a>
+          <a id="marsNav" class="nav-item nav-link clrwhite navbutton" href="#" data-toggle="collapse"
+            data-target="#navbarNavAltMarkup"><i class="fas fa-user-astronaut"></i> MARS</a>
         </div>
       </div>
     </div>
@@ -41,16 +47,21 @@
   <div id="apod" class="container">
     <div class="main">
       <div class="bgblue topsection clrwhite">
-            <h1><strong class="clrorange">A</strong>stronomy <strong class="clrorange">P</strong>hoto <strong class="clrorange">O</strong>f the <strong class="clrorange">D</strong>ay</h1>
-            <div>
-            <input id="apodDate" class="inputfield" max="" type="date" value="" name="apodDate" />
-            </div>
+        <h1><strong class="clrorange">A</strong>stronomy <strong class="clrorange">P</strong>hoto <strong
+            class="clrorange">O</strong>f the <strong class="clrorange">D</strong>ay</h1>
+        <div>
+          <input id="apodDate" class="inputfield" max="" type="date" value="" name="apodDate" />
+        </div>
       </div>
 
       <div class="bgblue bottomsection clrwhite">
-        <h4><span id="apodTitle"></span> <i class="far fa-question-circle questionmark" data-toggle="modal" data-target="#exampleModal"></i></h4>
-        <img class="" id="apodImg" src=""></img>
-        <iframe id="apodMov" class="d-none" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h4><span id="apodTitle"></span> </h4>
+        <i class="far fa-question-circle questionmark" data-toggle="modal"
+            data-target="#exampleModal"></i>
+        <img class="" id="apodImg" src="" data-toggle="modal"
+        data-target="#exampleModal"></img>
+        <iframe id="apodMov" class="d-none" width="560" height="315" src="" frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </div>
@@ -60,7 +71,8 @@
   <div id="epic" class="container">
     <div class="main">
       <div class="container bgblue topsection clrwhite">
-        <h1><strong class="clrorange">E</strong>arth <strong class="clrorange">P</strong>olychromatic <strong class="clrorange">I</strong>maging <strong class="clrorange">C</strong>amera</h1>
+        <h1><strong class="clrorange">E</strong>arth <strong class="clrorange">P</strong>olychromatic <strong
+            class="clrorange">I</strong>maging <strong class="clrorange">C</strong>amera</h1>
         <div>
           <input id="epicDate" class="inputfield" max="" type="date" name="epicDate" />
         </div>
@@ -81,7 +93,8 @@
   <div id="mars" class="container ">
     <div class="main">
       <div class="bgblue clrwhite topsection">
-        <h1><strong class="clrorange">M</strong>ars <strong class="clrorange">R</strong>over <strong class="clrorange">I</strong>mages</h1>
+        <h1><strong class="clrorange">M</strong>ars <strong class="clrorange">R</strong>over <strong
+            class="clrorange">I</strong>mages</h1>
 
         <!-- Mars Modal selector -->
         <div><i class="far fa-question-circle questionmark" data-toggle="modal" data-target="#marsModal"></i></div>
@@ -130,14 +143,15 @@
   </footer>
 
   <!-- Modal Apod -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content modalbg">
         <div class="modal-header clrorange">
           <h5 class="modal-title" id="exampleModalLabel"></h5>
           <button type="button" class="close clrwhite" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
         <div class="modal-body clrwhite" id="apodExplanation">
         </div>
@@ -146,17 +160,22 @@
   </div>
 
   <!-- Modal Epic -->
-  <div class="modal fade" id="epicModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="epicModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content modalbg">
         <div class="modal-header clrorange">
           <h5 class="modal-title" id="exampleModalLabel">EPIC</h5>
           <button type="button" class="close clrwhite" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-        <div class="modal-body clrwhite">EPIC contains the daily imagery collected by DSCOVR's Earth Polychromatic Imaging Camera (EPIC) instrument. Uniquely positioned at the Earth-Sun Lagrange point, EPIC provides full disc imagery of the Earth and captures unique perspectives of certain
-          astronomical events such as lunar transits using a 2048x2048 pixel CCD (Charge Coupled Device) detector coupled to a 30-cm aperture Cassegrain telescope.<br><br> The last available image is dated: <span id="modalEpicDate" type="date"></span>
+        <div class="modal-body clrwhite">EPIC contains the daily imagery collected by DSCOVR's Earth Polychromatic
+          Imaging Camera (EPIC) instrument. Uniquely positioned at the Earth-Sun Lagrange point, EPIC provides full disc
+          imagery of the Earth and captures unique perspectives of certain
+          astronomical events such as lunar transits using a 2048x2048 pixel CCD (Charge Coupled Device) detector
+          coupled to a 30-cm aperture Cassegrain telescope.<br><br> The last available image is dated: <span
+            id="modalEpicDate" type="date"></span>
 
         </div>
       </div>
@@ -164,28 +183,33 @@
   </div>
 
   <!-- Modal Mars -->
-  <div class="modal fade" id="marsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="marsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content modalbg">
         <div class="modal-header clrorange">
           <h5 class="modal-title" id="exampleModalLabel">About the Mars Rovers</h5>
           <button type="button" class="close clrwhite" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-        <div class="modal-body clrwhite">Sol is a Martian Solar Day. The count for the rover starts from the day it landed on Mars.<br><br> Rover info:<br><br>
-
-
-
+        <div class="modal-body clrwhite">Sol is a Martian Solar Day. The count for the rover starts from the day it
+          landed on Mars.
         </div>
       </div>
     </div>
   </div>
 
   <!--Bootstrap script-->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
