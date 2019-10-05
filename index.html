@@ -22,7 +22,7 @@
   <nav class="navbar navbar-expand-sm bgblue">
     <div class="container">
       <div class="navbar-brand">
-        <img id="nasalogo" src="assets/images/NASA_logo.svg">
+        <img id="nasalogo" alt="logo" src="assets/images/NASA_logo.svg">
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,7 +50,7 @@
         <h1><strong class="clrorange">A</strong>stronomy <strong class="clrorange">P</strong>hoto <strong
             class="clrorange">O</strong>f the <strong class="clrorange">D</strong>ay</h1>
         <div>
-          <input id="apodDate" class="inputfield" max="" type="date" value="" name="apodDate" />
+          <input id="apodDate" class="inputfield"  type="date" name="apodDate" value="" max=""/>
         </div>
       </div>
 
@@ -58,10 +58,8 @@
         <h4><span id="apodTitle"></span> </h4>
         <i class="far fa-question-circle questionmark" data-toggle="modal"
             data-target="#exampleModal"></i>
-        <img class="" id="apodImg" src="" data-toggle="modal"
-        data-target="#exampleModal"></img>
-        <iframe id="apodMov" class="d-none" width="560" height="315" src="" frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <img class="" id="apodImg" Alt="Astronomy photo of the day" src="" data-toggle="modal" data-target="#exampleModal">
+        <iframe id="apodMov" class="d-none" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </div>
@@ -74,14 +72,14 @@
         <h1><strong class="clrorange">E</strong>arth <strong class="clrorange">P</strong>olychromatic <strong
             class="clrorange">I</strong>maging <strong class="clrorange">C</strong>amera</h1>
         <div>
-          <input id="epicDate" class="inputfield" max="" type="date" name="epicDate" />
+          <input id="epicDate" class="inputfield" type="date" name="epicDate" max="">
         </div>
         <i class="far fa-question-circle questionmark" data-toggle="modal" data-target="#epicModal"></i>
       </div>
 
       <div class="bgblue bottomsection clrwhite">
         <h4></h4>
-        <img id="epicImg" src=""></img>
+        <img id="epicImg" alt="Image from the EPIC Camera" src="">
 
       </div>
     </div>
@@ -131,7 +129,7 @@
       </div>
 
       <div class="bgblue clrwhite bottomsection">
-        <img id="marsImg" src=""></img>
+        <img id="marsImg" alt="Mars Rover Image" src="">
       </div>
     </div>
   </div>
@@ -160,12 +158,12 @@
   </div>
 
   <!-- Modal Epic -->
-  <div class="modal fade" id="epicModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  <div class="modal fade" id="epicModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content modalbg">
         <div class="modal-header clrorange">
-          <h5 class="modal-title" id="exampleModalLabel">EPIC</h5>
+          <h5 class="modal-title" id="exampleModalLabel2">EPIC</h5>
           <button type="button" class="close clrwhite" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -175,7 +173,7 @@
           imagery of the Earth and captures unique perspectives of certain
           astronomical events such as lunar transits using a 2048x2048 pixel CCD (Charge Coupled Device) detector
           coupled to a 30-cm aperture Cassegrain telescope.<br><br> The last available image is dated: <span
-            id="modalEpicDate" type="date"></span>
+            id="modalEpicDate"></span>
 
         </div>
       </div>
@@ -183,12 +181,12 @@
   </div>
 
   <!-- Modal Mars -->
-  <div class="modal fade" id="marsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  <div class="modal fade" id="marsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content modalbg">
         <div class="modal-header clrorange">
-          <h5 class="modal-title" id="exampleModalLabel">About the Mars Rovers</h5>
+          <h5 class="modal-title" id="exampleModalLabel3">About the Mars Rovers</h5>
           <button type="button" class="close clrwhite" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -211,10 +209,10 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
   </script>
 
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <!-- Own Script-->
-  <script type="text/javascript" src="assets/js/script.js"></script>
+  <script src="assets/js/script.js"></script>
 
 </body>
 
